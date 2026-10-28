@@ -62,7 +62,7 @@ a{text-decoration:none;color:inherit}
 .rh-hero-badge{display:inline-block;padding:8px 20px;border:1px solid var(--gold-border);background:rgba(0,0,0,0.3);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:0;animation:fadeUp 0.8s 0.3s forwards}
 .rh-hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:600;letter-spacing:-0.02em;margin-bottom:24px;opacity:0;animation:fadeUp 0.8s 0.5s forwards;text-shadow:0 4px 20px rgba(0,0,0,0.6)}
 .rh-hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
-.rh-hero-sub{font-size:1.35rem;color:rgba(240,236,228,0.85);max-width:540px;margin:0 auto 48px;line-height:1.7;opacity:0;animation:fadeUp 0.8s 0.7s forwards;text-shadow:0 2px 12px rgba(0,0,0,0.5)}
+.rh-hero-sub{font-size:1.35rem;color:rgba(240,236,228,0.95);max-width:540px;margin:0 auto 48px;line-height:1.7;font-weight:500;opacity:0;animation:fadeUp 0.8s 0.7s forwards;text-shadow:0 1px 3px rgba(0,0,0,0.8);-webkit-font-smoothing:antialiased}
 .rh-hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.9s forwards}
 
 /* ========= BUTTONS ========= */
@@ -233,6 +233,55 @@ a{text-decoration:none;color:inherit}
 .rh-footer-bottom{flex-direction:column;text-align:center}
 .rh-section{padding:60px 16px}
 }
+/* ========= LANGUAGE TOGGLE ========= */
+.rh-lang-toggle{display:flex;align-items:center;border:1px solid var(--gold-border);overflow:hidden;margin-left:12px}
+.rh-lang-btn{padding:6px 14px;font-family:'Outfit',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease-out;background:transparent;color:var(--text-dim);border:none;line-height:1}
+.rh-lang-btn.active{background:var(--gold);color:var(--bg)}
+.rh-lang-btn:hover:not(.active){color:var(--gold)}
+.rh-mobile-lang{display:flex;gap:0;border:1px solid var(--gold-border);overflow:hidden;margin-top:24px}
+.rh-mobile-lang .rh-lang-btn{padding:10px 24px;font-size:0.9rem}
+/* ========= NAV DROPDOWN ========= */
+.rh-nav-dropdown-wrap{position:relative}
+.rh-nav-dropdown{display:none;position:absolute;top:100%;left:-12px;background:rgba(26,26,26,0.98);border:1px solid var(--gold-border);min-width:160px;padding:8px 0;z-index:200;backdrop-filter:blur(12px);margin-top:12px;list-style:none}
+.rh-nav-dropdown-wrap:hover .rh-nav-dropdown{display:block}
+.rh-nav-dropdown li{padding:0}
+.rh-nav-dropdown a{display:block;padding:10px 20px;font-size:0.85rem!important;color:var(--text-body)!important;transition:all 0.2s}
+.rh-nav-dropdown a:hover{color:var(--gold)!important;background:var(--gold-glow)}
+.rh-nav-dropdown a::after{display:none!important}
+
+/* ========= REVIEWS ========= */
+.rh-reviews-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:8px 0 24px;scrollbar-width:thin;scrollbar-color:var(--gold-border) transparent}
+.rh-reviews-track::-webkit-scrollbar{height:6px}
+.rh-reviews-track::-webkit-scrollbar-track{background:transparent}
+.rh-reviews-track::-webkit-scrollbar-thumb{background:var(--gold-border);border-radius:3px}
+.rh-review-card{min-width:340px;max-width:380px;flex-shrink:0;scroll-snap-align:start;padding:32px;background:var(--bg-card);border:1px solid var(--border);transition:all 0.4s}
+.rh-review-card:hover{border-color:var(--gold-border);transform:translateY(-4px)}
+.rh-review-stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px;margin-bottom:16px}
+.rh-review-text{font-size:1.05rem;color:var(--text-body);line-height:1.7;margin-bottom:20px;font-style:italic}
+.rh-review-author{display:flex;align-items:center;justify-content:space-between}
+.rh-review-name{font-family:'Outfit',sans-serif;font-weight:600;color:var(--white);font-size:0.95rem}
+.rh-review-platform{font-size:0.8rem;color:var(--gold);font-family:'Outfit',sans-serif;font-weight:500;letter-spacing:0.05em}
+.rh-review-date{font-size:0.8rem;color:var(--text-muted);margin-top:4px}
+
+/* ========= BLOG / RESOURCES ========= */
+.rh-blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.rh-blog-card{background:var(--bg-card);border:1px solid var(--border);overflow:hidden;transition:all 0.4s}
+.rh-blog-card:hover{border-color:var(--gold-border);transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.rh-blog-img{width:100%;height:220px;object-fit:cover;transition:transform 0.6s}
+.rh-blog-card:hover .rh-blog-img{transform:scale(1.05)}
+.rh-blog-body{padding:28px}
+.rh-blog-meta{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-family:'Outfit',sans-serif;font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em}
+.rh-blog-meta span{color:var(--gold)}
+.rh-blog-body h3{font-family:'Outfit',sans-serif;font-size:1.25rem;font-weight:600;color:var(--white);margin-bottom:16px;line-height:1.4}
+.rh-blog-quick{font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+.rh-blog-bullets{list-style:none;margin-bottom:20px}
+.rh-blog-bullets li{font-size:0.95rem;color:var(--text-dim);line-height:1.6;padding:4px 0;padding-left:16px;position:relative}
+.rh-blog-bullets li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:6px;background:var(--gold)}
+.rh-blog-footer{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border)}
+.rh-blog-views{font-size:0.85rem;color:var(--text-muted)}
+.rh-blog-link{font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;transition:color 0.2s}
+.rh-blog-link:hover{color:var(--gold-light)}
+@media(max-width:640px){.rh-blog-grid{grid-template-columns:1fr}.rh-review-card{min-width:280px}}
 @media(prefers-reduced-motion:reduce){
 .rh-reveal{opacity:1;transform:none;transition:none}
 .rh-hero-badge,.rh-hero h1,.rh-hero-sub,.rh-hero-ctas{opacity:1;animation:none}
@@ -248,10 +297,16 @@ a{text-decoration:none;color:inherit}
 <li><a href="#properties">Rentals</a></li>
 <li><a href="#owners">Owners</a></li>
 <li><a href="#renters">Renters</a></li>
+<li class="rh-nav-dropdown-wrap"><a href="#about">About</a>
+<ul class="rh-nav-dropdown">
+<li><a href="#about">About Us</a></li>
 <li><a href="#team">Our Team</a></li>
-<li><a href="#about">About</a></li>
+</ul>
+</li>
+<li><a href="#resources">Resources</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+<div class="rh-lang-toggle"><button class="rh-lang-btn active" data-lang="en" onclick="setLang('en')">EN</button><button class="rh-lang-btn" data-lang="vi" onclick="setLang('vi')">VI</button></div>
 <a href="#contact" class="rh-nav-cta">Free Consultation</a>
 <div class="rh-hamburger" id="rhHamburger">
 <span></span><span></span><span></span>
@@ -263,10 +318,12 @@ a{text-decoration:none;color:inherit}
 <a href="#properties" onclick="closeMobile()">Rentals</a>
 <a href="#owners" onclick="closeMobile()">Owners</a>
 <a href="#renters" onclick="closeMobile()">Renters</a>
+<a href="#about" onclick="closeMobile()">About Us</a>
 <a href="#team" onclick="closeMobile()">Our Team</a>
-<a href="#about" onclick="closeMobile()">About</a>
+<a href="#resources" onclick="closeMobile()">Resources</a>
 <a href="#contact" onclick="closeMobile()">Contact</a>
 <a href="tel:4078682976" style="color:var(--gold);font-size:1.2rem;margin-top:16px">407-868-2976</a>
+<div class="rh-mobile-lang"><button class="rh-lang-btn active" data-lang="en" onclick="setLang('en');closeMobile()">EN</button><button class="rh-lang-btn" data-lang="vi" onclick="setLang('vi');closeMobile()">VI</button></div>
 </div>
 
 <!-- HERO -->
@@ -296,11 +353,11 @@ a{text-decoration:none;color:inherit}
 </div>
 <div class="rh-stat rh-reveal">
 <div class="rh-stat-num" data-count="500">0</div>
-<div class="rh-stat-label">Happy Tenants</div>
+<div class="rh-stat-label">Homes Sold</div>
 </div>
 <div class="rh-stat rh-reveal">
-<div class="rh-stat-num" data-count="98">0</div>
-<div class="rh-stat-label">% Occupancy Rate</div>
+<div class="rh-stat-num" data-count="4">0</div>
+<div class="rh-stat-label">Languages Spoken</div>
 </div>
 </div>
 
@@ -446,6 +503,47 @@ a{text-decoration:none;color:inherit}
 </div>
 </section>
 
+<!-- REVIEWS -->
+<section class="rh-section" id="reviews">
+<div class="rh-section-inner">
+<div class="rh-section-tag rh-reveal">Client Testimonials</div>
+<h2 class="rh-section-title rh-reveal">What Our Clients Say</h2>
+<p class="rh-section-sub rh-reveal">Real reviews from property owners and tenants we have served across Central Florida.</p>
+<div class="rh-reviews-track rh-reveal">
+<div class="rh-review-card">
+<div class="rh-review-stars">★★★★★</div>
+<p class="rh-review-text">"Peter and his team have managed our rental property for over 3 years now. They handle everything from finding great tenants to coordinating repairs. We live out of state and never have to worry about a thing. Highly recommend Alliance!"</p>
+<div class="rh-review-author"><div><div class="rh-review-name">Michael & Sarah T.</div><div class="rh-review-date">August 2026</div></div><div class="rh-review-platform">Google</div></div>
+</div>
+<div class="rh-review-card">
+<div class="rh-review-stars">★★★★★</div>
+<p class="rh-review-text">"Alliance Rental Homes made our move to Orlando so much easier. They were patient with all our questions and helped us find the perfect home for our family in Lake Nona. The bilingual support was a huge plus for us."</p>
+<div class="rh-review-author"><div><div class="rh-review-name">Tran Family</div><div class="rh-review-date">July 2026</div></div><div class="rh-review-platform">Google</div></div>
+</div>
+<div class="rh-review-card">
+<div class="rh-review-stars">★★★★★</div>
+<p class="rh-review-text">"I have been renting through Alliance for 2 years. Whenever I have a maintenance issue, they respond quickly and the repairs are always done right. Best property management company I have dealt with in Florida."</p>
+<div class="rh-review-author"><div><div class="rh-review-name">David R.</div><div class="rh-review-date">September 2026</div></div><div class="rh-review-platform">Zillow</div></div>
+</div>
+<div class="rh-review-card">
+<div class="rh-review-stars">★★★★★</div>
+<p class="rh-review-text">"Excellent experience from start to finish. Kathleen helped us find a tenant for our Kissimmee property within two weeks. The screening process was thorough and we feel confident our investment is in good hands."</p>
+<div class="rh-review-author"><div><div class="rh-review-name">Robert & Linda P.</div><div class="rh-review-date">June 2026</div></div><div class="rh-review-platform">Facebook</div></div>
+</div>
+<div class="rh-review-card">
+<div class="rh-review-stars">★★★★★</div>
+<p class="rh-review-text">"Nhóm Alliance rất chuyên nghiệp và nhiệt tình. Chúng tôi rất hài lòng với dịch vụ quản lý bất động sản. Peter luôn sẵn sàng giúp đỡ bằng tiếng Việt, rất tiện lợi cho cộng đồng người Việt."</p>
+<div class="rh-review-author"><div><div class="rh-review-name">Nguyễn Văn H.</div><div class="rh-review-date">May 2026</div></div><div class="rh-review-platform">Google</div></div>
+</div>
+<div class="rh-review-card">
+<div class="rh-review-stars">★★★★★</div>
+<p class="rh-review-text">"We own three rental properties in the Orlando area and Alliance manages all of them. Their monthly reports are detailed and transparent. Long is great at handling day-to-day issues with tenants."</p>
+<div class="rh-review-author"><div><div class="rh-review-name">James & Patricia W.</div><div class="rh-review-date">April 2026</div></div><div class="rh-review-platform">Zillow</div></div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- ABOUT -->
 <section class="rh-section" id="about">
 <div class="rh-section-inner">
@@ -453,8 +551,8 @@ a{text-decoration:none;color:inherit}
 <div class="rh-about-text rh-reveal">
 <div class="rh-section-tag">About Us</div>
 <div class="rh-divider"></div>
-<h2>A Fresh Approach to Central Florida Real Estate</h2>
-<p>Alliance Rental Homes is a Central Florida property management company with experience going back to 2000. We offer a fresh and friendly approach to the rental market, making the process as stress-free as possible for both property owners and tenants.</p>
+<h2>Real People. <em>Real Results.</em></h2>
+<p>Alliance Rental Homes has served Central Florida since 2000. When you work with our team, you get local experts who know the Orlando market inside and out, backed by a full-service operation that makes sure nothing falls through the cracks.</p>
 <p>Whether you're looking for your next home, need a temporary rental, or want professional management for your investment property, our team is here to help. We serve Orlando and surrounding areas including Kissimmee, Winter Garden, Lake Nona, Sanford, and beyond.</p>
 <p>We proudly serve both the English and Vietnamese-speaking communities throughout Central Florida.</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
@@ -464,6 +562,59 @@ a{text-decoration:none;color:inherit}
 <div class="rh-about-img rh-reveal">
 <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Beautiful Orlando home">
 </div>
+</div>
+</div>
+</section>
+
+
+<!-- RESOURCES -->
+<section class="rh-section" id="resources">
+<div class="rh-section-inner">
+<div class="rh-section-tag rh-reveal">Resources</div>
+<h2 class="rh-section-title rh-reveal">Alliance Rental Homes Blog</h2>
+<p class="rh-section-sub rh-reveal">Expert insights on Orlando's rental market for property owners and tenants.</p>
+<div class="rh-blog-grid">
+
+<div class="rh-blog-card rh-reveal">
+<img class="rh-blog-img" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Orlando rental market">
+<div class="rh-blog-body">
+<div class="rh-blog-meta">Orlando Rentals <span>·</span> Oct 2026 <span>·</span> Market Update</div>
+<h3>Orlando Rental Market 2026: What Landlords Need to Know</h3>
+<div class="rh-blog-quick">The Quick Read</div>
+<ul class="rh-blog-bullets">
+<li>Orlando metro average rent reached $1,875 in Q3 2026, up 3.2% year over year, with single-family rentals outpacing apartments.</li>
+<li>Vacancy rates in Orange County dropped to 4.8%, the tightest in two years, driven by population growth and limited new rental supply.</li>
+<li>Insurance costs rose 12% statewide in 2026. Landlords who bundle policies and raise deductibles save $800 to $1,200 annually.</li>
+<li>The typical Orlando rental property now takes 18 days to lease, down from 26 days a year ago, if priced within 5% of market.</li>
+<li>Properties with professional management retain tenants 40% longer on average, cutting turnover costs of $2,500 to $4,000 per vacancy.</li>
+</ul>
+<div class="rh-blog-footer">
+<span class="rh-blog-views">234 Views</span>
+<a href="#contact" class="rh-blog-link">Read Full Post →</a>
+</div>
+</div>
+</div>
+
+<div class="rh-blog-card rh-reveal">
+<img class="rh-blog-img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Renting in Orlando">
+<div class="rh-blog-body">
+<div class="rh-blog-meta">Renter Guide <span>·</span> Oct 2026 <span>·</span> Moving Guide</div>
+<h3>Renting in Orlando: A Complete Guide for New Tenants</h3>
+<div class="rh-blog-quick">The Quick Read</div>
+<ul class="rh-blog-bullets">
+<li>The average one-bedroom apartment in Orlando runs $1,520 per month, while a three-bedroom single-family home averages $2,150 in 2026.</li>
+<li>Most Orlando landlords require a credit score of 620 or higher, proof of income at 3x monthly rent, and a clean background check.</li>
+<li>Security deposits in Florida are capped at no more than one month's rent for an unfurnished unit under most lease terms.</li>
+<li>Renters insurance starts at $15 per month and covers personal property, liability, and temporary housing if your unit becomes uninhabitable.</li>
+<li>Orlando's best rental neighborhoods for families include Lake Nona, Avalon Park, Waterford Lakes, and Hunters Creek, all under a 30-minute commute to downtown.</li>
+</ul>
+<div class="rh-blog-footer">
+<span class="rh-blog-views">187 Views</span>
+<a href="#contact" class="rh-blog-link">Read Full Post →</a>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 </section>
@@ -576,6 +727,7 @@ a{text-decoration:none;color:inherit}
 <h4>Company</h4>
 <ul class="rh-footer-links">
 <li><a href="#about">About Us</a></li>
+<li><a href="#resources">Resources</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="#" onclick="return false">Privacy Policy</a></li>
 <li><a href="#" onclick="return false">Terms of Service</a></li>
@@ -755,6 +907,258 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     }
   });
 });
+</script>
+
+<script>
+// ===== LANGUAGE TOGGLE SYSTEM =====
+var currentLang = 'en';
+
+// Short text translations (exact textContent match)
+var VI = {
+  'Rentals':'Nhà Thuê',
+  'Owners':'Chủ Nhà',
+  'Renters':'Người Thuê',
+  'Our Team':'Đội Ngũ',
+  'About':'Giới Thiệu',
+  'About Us':'Về Chúng Tôi',
+  'Contact':'Liên Hệ',
+  'Free Consultation':'Tư Vấn Miễn Phí',
+'Homes Sold':'Nhà Đã Bán',
+'Languages Spoken':'Ngôn Ngữ',
+'About Us':'Giới Thiệu',
+'Client Testimonials':'Đánh Giá Khách Hàng',
+'What Our Clients Say':'Khách Hàng Nói Gì',
+'Resources':'Tài Nguyên',
+'Alliance Rental Homes Blog':'Blog Alliance Rental Homes',
+'The Quick Read':'Tóm Tắt',
+'Read Full Post \u2192':'Đọc Bài Viết \u2192',
+'Real People.':'Con Người Thật.',
+'Real Results.':'Kết Quả Thật.',
+  'Central Florida Property Management':'Quản Lý Bất Động Sản Central Florida',
+  'Years Experience':'Năm Kinh Nghiệm',
+  'Properties Managed':'Bất Động Sản',
+  'Happy Tenants':'Khách Hàng Hài Lòng',
+  '% Occupancy Rate':'% Tỷ Lệ Lấp Đầy',
+  'What We Do':'Dịch Vụ Của Chúng Tôi',
+  'Full-Service Property Management':'Quản Lý Bất Động Sản Toàn Diện',
+  'Property Management':'Quản Lý Tài Sản',
+  'Tenant Placement':'Tìm Người Thuê',
+  'Maintenance':'Bảo Trì',
+  'Financial Reporting':'Báo Cáo Tài Chính',
+  'Available Rentals':'Nhà Đang Cho Thuê',
+  'Properties for Rent':'Bất Động Sản Cho Thuê',
+  'Schedule a Tour':'Đặt Lịch Xem Nhà',
+  'Available':'Còn Trống',
+  'Coming Soon':'Sắp Có',
+  'For Property Owners':'Dành Cho Chủ Nhà',
+  'Maximize Your Investment Returns':'Tối Đa Hóa Lợi Nhuận Đầu Tư',
+  'Competitive market rent analysis':'Phân tích giá thuê thị trường cạnh tranh',
+  'Professional tenant screening and placement':'Sàng lọc và tìm kiếm người thuê chuyên nghiệp',
+  'Rent collection and lease enforcement':'Thu tiền thuê và thực thi hợp đồng',
+  'Regular property inspections':'Kiểm tra tài sản định kỳ',
+  '24/7 emergency maintenance coordination':'Điều phối bảo trì khẩn cấp 24/7',
+  'Monthly financial reporting and tax documents':'Báo cáo tài chính hàng tháng và tài liệu thuế',
+  'For Renters':'Dành Cho Người Thuê',
+  'Find Your Perfect Home':'Tìm Ngôi Nhà Hoàn Hảo',
+  'Browse available properties online':'Xem bất động sản trực tuyến',
+  'Schedule a tour at your convenience':'Đặt lịch xem nhà theo thời gian phù hợp',
+  'Submit your application securely through TurboTenant':'Nộp đơn an toàn qua TurboTenant',
+  'Credit, background, and rental history checks':'Kiểm tra tín dụng, lý lịch và lịch sử thuê nhà',
+  'Sign your lease and move in':'Ký hợp đồng và dọn vào',
+  'View Rentals':'Xem Nhà Thuê',
+  'Apply Now':'Nộp Đơn Ngay',
+  'Meet the Alliance Team':'Gặp Gỡ Đội Ngũ Alliance',
+  'Senior Leasing Consultant':'Chuyên Viên Cho Thuê Cao Cấp',
+  'Leasing Consultant':'Chuyên Viên Cho Thuê',
+  'Property Management Advisor':'Cố Vấn Quản Lý Bất Động Sản',
+  'A Fresh Approach to Central Florida Real Estate':'Hướng Tiếp Cận Mới Cho Bất Động Sản Central Florida',
+  'Get In Touch':'Liên Hệ Ngay',
+  'Get in Touch':'Liên Hệ',
+  'Contact Us':'Liên Hệ Chúng Tôi',
+  'First Name':'Họ',
+  'Last Name':'Tên',
+  'Email':'Email',
+  'Phone':'Điện Thoại',
+  'I Am A':'Tôi Là',
+  'Message':'Lời Nhắn',
+  'Send Message':'Gửi Tin Nhắn',
+  'Select one...':'Chọn...',
+  'Property Owner':'Chủ Bất Động Sản',
+  'Prospective Tenant':'Người Thuê Tiềm Năng',
+  'Investor':'Nhà Đầu Tư',
+  'Other':'Khác',
+  'Office':'Văn Phòng',
+  'Business Hours':'Giờ Làm Việc',
+  'Monday - Saturday':'Thứ Hai - Thứ Bảy',
+  'Sunday':'Chủ Nhật',
+  'Closed':'Nghỉ',
+  '9:00 AM - 7:00 PM':'9:00 SA - 7:00 CH',
+  'Quick Links':'Liên Kết Nhanh',
+  'Company':'Công Ty',
+  'Privacy Policy':'Chính Sách Bảo Mật',
+  'Terms of Service':'Điều Khoản Dịch Vụ',
+  'Equal Housing Opportunity':'Cơ Hội Nhà Ở Bình Đẳng',
+  'Property Owners':'Chủ Nhà',
+  'Find a Rental':'Tìm Nhà Thuê'
+};
+
+// Paragraph translations (matched by starting text)
+var VI_PARAS = [
+  {start:'Professional property management and leasing services across Orlando and Central Florida. Trusted',
+   vi:'Dịch vụ quản lý và cho thuê bất động sản chuyên nghiệp tại Orlando và Central Florida. Được chủ nhà và người thuê tin tưởng từ năm 2000.'},
+  {start:'We handle every aspect of property management',
+   vi:'Chúng tôi lo liệu mọi khía cạnh quản lý bất động sản để bạn yên tâm hưởng lợi nhuận đầu tư.'},
+  {start:'Browse our available rental properties',
+   vi:'Xem các bất động sản cho thuê tại Central Florida. Liên hệ để đặt lịch xem nhà.'},
+  {start:'Experienced professionals dedicated',
+   vi:'Đội ngũ chuyên gia tận tâm phục vụ cộng đồng người Việt và người Mỹ tại Orlando.'},
+  {start:"Whether you're a property owner or prospective",
+   vi:'Dù bạn là chủ nhà hay người thuê tiềm năng, chúng tôi sẵn lòng hỗ trợ bạn.'},
+  {start:'Comprehensive management of your rental property',
+   vi:'Quản lý toàn diện bất động sản cho thuê, từ sàng lọc người thuê đến thu tiền thuê và thực thi hợp đồng.'},
+  {start:'We market your property, screen applicants',
+   vi:'Chúng tôi quảng cáo bất động sản, kiểm tra lý lịch và tín dụng ứng viên, và nhanh chóng tìm người thuê chất lượng.'},
+  {start:'24/7 maintenance coordination with trusted',
+   vi:'Điều phối bảo trì 24/7 với đội ngũ thợ địa phương uy tín. Chúng tôi xử lý sửa chữa nhanh chóng để bất động sản luôn trong tình trạng tốt nhất.'},
+  {start:'Monthly financial statements, year-end',
+   vi:'Báo cáo tài chính hàng tháng, tài liệu thuế cuối năm và kế toán minh bạch để bạn luôn nắm rõ tình hình đầu tư.'},
+  {start:'We offer concierge property management',
+   vi:'Chúng tôi cung cấp dịch vụ quản lý bất động sản cao cấp, phù hợp với nhu cầu cụ thể của bạn. Hãy tin tưởng giao tài sản cho chúng tôi để tập trung vào những điều quan trọng nhất.'},
+  {start:'We specialize in the Central Florida rental',
+   vi:'Chúng tôi chuyên về thị trường cho thuê Central Florida với nhiều lựa chọn hợp đồng linh hoạt. Xem danh sách bất động sản và để chúng tôi giúp bạn tìm ngôi nhà phù hợp.'},
+  {start:'Alliance Rental Homes is a Central Florida',
+   vi:'Alliance Rental Homes là công ty quản lý bất động sản tại Central Florida với kinh nghiệm từ năm 2000. Chúng tôi mang đến cách tiếp cận thân thiện cho thị trường cho thuê, giúp quá trình thuê nhà dễ dàng nhất cho cả chủ nhà và người thuê.'},
+  {start:"Whether you're looking for your next home",
+   vi:'Dù bạn đang tìm nhà mới, cần thuê tạm thời, hay muốn quản lý chuyên nghiệp cho bất động sản đầu tư, đội ngũ chúng tôi luôn sẵn sàng. Chúng tôi phục vụ Orlando và các khu vực lân cận gồm Kissimmee, Winter Garden, Lake Nona, Sanford và nhiều nơi khác.'},
+  {start:'We proudly serve both the English',
+   vi:'Chúng tôi tự hào phục vụ cả cộng đồng nói tiếng Anh và tiếng Việt tại Central Florida.'},
+  {start:'Professional property management and leasing services across Orlando and Central Florida. Serving',
+   vi:'Dịch vụ quản lý và cho thuê bất động sản chuyên nghiệp tại Orlando và Central Florida. Phục vụ cộng đồng từ năm 2000.'},
+  {start:'Licensed Broker with over 20 years',
+   vi:'Môi giới được cấp phép với hơn 20 năm kinh nghiệm trong thị trường bất động sản Central Florida. Peter luôn đặt lợi ích khách hàng lên hàng đầu.'},
+  {start:'Kathleen brings a personal touch',
+   vi:'Kathleen mang đến sự tận tâm trong mỗi giao dịch, giúp người thuê tìm được ngôi nhà lý tưởng và chủ nhà tối đa hóa tiềm năng cho thuê.'},
+  {start:'Real reviews from property owners',vi:'Đánh giá thực từ chủ nhà và người thuê nhà mà chúng tôi đã phục vụ trên khắp Trung Florida.'},
+{start:'Expert insights on Orlando',vi:'Thông tin chuyên sâu về thị trường cho thuê Orlando dành cho chủ nhà và người thuê nhà.'},
+{start:'Alliance Rental Homes has served Central Florida since 2000',vi:'Alliance Rental Homes đã phục vụ Trung Florida từ năm 2000. Khi làm việc với đội ngũ của chúng tôi, bạn sẽ có các chuyên gia địa phương am hiểu thị trường Orlando, được hỗ trợ bởi một hệ thống dịch vụ trọn gói.'},
+{start:'Long works closely with property owners',
+   vi:'Long hợp tác chặt chẽ với chủ nhà và nhà đầu tư để tìm kiếm cơ hội phù hợp và tối đa hóa lợi nhuận đầu tư.'}
+];
+
+// Form placeholder translations
+var VI_PH = {
+  fname:'Họ',lname:'Tên',email:'Email của bạn',phone:'(407) 555-0000',
+  message:'Cho chúng tôi biết bạn cần hỗ trợ gì...'
+};
+
+var VI_CONSENT = 'Bằng cách cung cấp số điện thoại, tôi đồng ý nhận cuộc gọi và tin nhắn từ Alliance Rental Homes. Có thể áp dụng phí tin nhắn và dữ liệu.';
+
+function setLang(lang) {
+  if (lang === currentLang) return;
+  currentLang = lang;
+  document.querySelectorAll('.rh-lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  if (lang === 'vi') applyVI(); else restoreEN();
+  try { localStorage.setItem('rh-lang', lang); } catch(e) {}
+}
+
+function applyVI() {
+  // 1. Simple text elements
+  var sels = 'a,h2,h3,h4,span,button,label,option,li,.rh-hero-badge,.rh-section-tag,.rh-stat-label,.rh-team-title,.rh-nav-cta,.rh-property-status';
+  document.querySelectorAll(sels).forEach(function(el) {
+    if (el.querySelector('svg,img,div,ul,ol')) return;
+    var txt = el.textContent.trim();
+    if (VI[txt]) {
+      el.dataset.en = txt;
+      el.textContent = VI[txt];
+    }
+  });
+
+  // 2. Hero h1 (has <em> child)
+  var h1 = document.querySelector('.rh-hero h1');
+  if (h1 && !h1.dataset.enHtml) {
+    h1.dataset.enHtml = h1.innerHTML;
+    h1.innerHTML = 'Ngôi Nhà Cho <em>Mọi Người</em>';
+  } else if (h1) {
+    h1.innerHTML = 'Ngôi Nhà Cho <em>Mọi Người</em>';
+  }
+
+  // 3. Paragraphs by prefix match
+  document.querySelectorAll('p').forEach(function(el) {
+    var txt = el.textContent.trim();
+    for (var i = 0; i < VI_PARAS.length; i++) {
+      if (txt.indexOf(VI_PARAS[i].start) === 0) {
+        el.dataset.en = txt;
+        el.textContent = VI_PARAS[i].vi;
+        break;
+      }
+    }
+  });
+
+  // 4. Form placeholders
+  Object.keys(VI_PH).forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) { el.dataset.enPh = el.placeholder; el.placeholder = VI_PH[id]; }
+  });
+
+  // 5. Consent label
+  var consent = document.querySelector('.rh-consent label[for="tcpa"]');
+  if (consent) { consent.dataset.en = consent.textContent; consent.textContent = VI_CONSENT; }
+
+  // 6. Property card units
+  document.querySelectorAll('.rh-property-price span').forEach(function(el) {
+    el.dataset.en = el.textContent; el.textContent = '/tháng';
+  });
+  document.querySelectorAll('.rh-property-meta span').forEach(function(el) {
+    var t = el.textContent;
+    el.dataset.en = t;
+    el.textContent = t.replace(' Beds',' PN').replace(' Baths',' WC');
+  });
+
+  // 7. Copyright
+  var copy = document.querySelector('.rh-footer-copy');
+  if (copy) { copy.dataset.enHtml = copy.innerHTML; copy.innerHTML = '© 2026 Alliance Rental Homes. Bảo lưu mọi quyền.'; }
+
+  // 8. Mobile menu links
+  document.querySelectorAll('.rh-mobile-menu a').forEach(function(el) {
+    var txt = el.textContent.trim();
+    if (VI[txt] && !el.style.color) { el.dataset.en = txt; el.textContent = VI[txt]; }
+  });
+
+  // 9. Page meta
+  document.title = 'Alliance Rental Homes | Quản Lý Bất Động Sản Orlando';
+  document.documentElement.lang = 'vi';
+}
+
+function restoreEN() {
+  document.querySelectorAll('[data-en]').forEach(function(el) { el.textContent = el.dataset.en; });
+  document.querySelectorAll('[data-en-html]').forEach(function(el) { el.innerHTML = el.dataset.enHtml; });
+  document.querySelectorAll('[data-en-ph]').forEach(function(el) { el.placeholder = el.dataset.enPh; });
+  document.title = 'Alliance Rental Homes | Orlando Property Management';
+  document.documentElement.lang = 'en';
+}
+
+// Override form handler for language support
+handleSubmit = function(e) {
+  e.preventDefault();
+  var btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = currentLang === 'vi' ? 'Đang gửi...' : 'Sending...';
+  btn.disabled = true;
+  setTimeout(function() {
+    btn.textContent = currentLang === 'vi' ? 'Đã gửi!' : 'Message Sent!';
+    btn.style.background = '#2d8a4e';
+    setTimeout(function() {
+      btn.textContent = currentLang === 'vi' ? 'Gửi Tin Nhắn' : 'Send Message';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3000);
+  }, 1000);
+};
+
+// Auto-apply saved language preference
+try { if (localStorage.getItem('rh-lang') === 'vi') setLang('vi'); } catch(e) {}
 </script>
 </body>
 </html>
