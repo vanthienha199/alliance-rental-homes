@@ -31,7 +31,7 @@
 --shadow-lg:0 16px 48px rgba(0,0,0,0.5);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text-body);line-height:1.65;overflow-x:hidden}
+body{font-family:'Inter',system-ui,sans-serif;font-size:18px;background:var(--bg);color:var(--text-body);line-height:1.7;overflow-x:hidden}
 h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;color:var(--white);line-height:1.15;font-weight:600}
 img{max-width:100%}
 a{text-decoration:none;color:inherit}
@@ -62,7 +62,7 @@ a{text-decoration:none;color:inherit}
 .rh-hero-badge{display:inline-block;padding:8px 20px;border:1px solid var(--gold-border);background:rgba(0,0,0,0.3);font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:0;animation:fadeUp 0.8s 0.3s forwards}
 .rh-hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:600;letter-spacing:-0.02em;margin-bottom:24px;opacity:0;animation:fadeUp 0.8s 0.5s forwards;text-shadow:0 4px 20px rgba(0,0,0,0.6)}
 .rh-hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
-.rh-hero-sub{font-size:1.2rem;color:rgba(240,236,228,0.85);max-width:540px;margin:0 auto 48px;line-height:1.7;opacity:0;animation:fadeUp 0.8s 0.7s forwards;text-shadow:0 2px 12px rgba(0,0,0,0.5)}
+.rh-hero-sub{font-size:1.35rem;color:rgba(240,236,228,0.85);max-width:540px;margin:0 auto 48px;line-height:1.7;opacity:0;animation:fadeUp 0.8s 0.7s forwards;text-shadow:0 2px 12px rgba(0,0,0,0.5)}
 .rh-hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.9s forwards}
 
 /* ========= BUTTONS ========= */
@@ -92,7 +92,7 @@ a{text-decoration:none;color:inherit}
 .rh-section-inner{max-width:1100px;margin:0 auto}
 .rh-section-tag{font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .rh-section-title{font-size:clamp(2rem,4vw,3rem);margin-bottom:16px;letter-spacing:-0.02em}
-.rh-section-sub{color:var(--text-dim);margin-bottom:56px;max-width:560px;font-size:1.15rem;line-height:1.7}
+.rh-section-sub{color:var(--text-dim);margin-bottom:56px;max-width:560px;font-size:1.25rem;line-height:1.7}
 .rh-section-surface{background:var(--bg-surface)}
 .rh-divider{width:60px;height:2px;background:var(--gold);margin-bottom:24px}
 
@@ -104,7 +104,7 @@ a{text-decoration:none;color:inherit}
 .rh-service:hover::before{transform:scaleX(1)}
 .rh-service-icon{width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:var(--gold-glow);color:var(--gold);font-size:1.4rem;margin-bottom:24px;border:1px solid var(--gold-border)}
 .rh-service h3{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:600;margin-bottom:12px;color:var(--white)}
-.rh-service p{font-size:0.95rem;color:var(--text-dim);line-height:1.65}
+.rh-service p{font-size:1.05rem;color:var(--text-dim);line-height:1.65}
 
 /* ========= PROPERTIES ========= */
 .rh-properties-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -117,8 +117,8 @@ a{text-decoration:none;color:inherit}
 .rh-property-body{padding:24px}
 .rh-property-price{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.6rem;color:var(--gold);margin-bottom:4px}
 .rh-property-price span{font-size:0.9rem;color:var(--text-dim);font-family:'Inter',sans-serif;font-weight:400}
-.rh-property-addr{font-size:0.95rem;color:var(--text-body);margin-bottom:16px;line-height:1.5}
-.rh-property-meta{display:flex;gap:20px;padding-top:16px;border-top:1px solid var(--border);color:var(--text-dim);font-size:0.85rem}
+.rh-property-addr{font-size:1.05rem;color:var(--text-body);margin-bottom:16px;line-height:1.5}
+.rh-property-meta{display:flex;gap:20px;padding-top:16px;border-top:1px solid var(--border);color:var(--text-dim);font-size:0.95rem}
 .rh-property-meta span{display:flex;align-items:center;gap:5px}
 .rh-properties-cta{text-align:center;margin-top:48px}
 
@@ -129,9 +129,9 @@ a{text-decoration:none;color:inherit}
 .rh-split-content{padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
 .rh-split-content .rh-divider{margin-bottom:20px}
 .rh-split-content h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:20px}
-.rh-split-content p{margin-bottom:20px;font-size:1.05rem;line-height:1.75;color:var(--text-body)}
+.rh-split-content p{margin-bottom:20px;font-size:1.15rem;line-height:1.75;color:var(--text-body)}
 .rh-split-list{list-style:none;margin-bottom:32px}
-.rh-split-list li{padding:10px 0;border-bottom:1px solid var(--border);font-size:1rem;color:var(--text-body);display:flex;align-items:center;gap:12px}
+.rh-split-list li{padding:10px 0;border-bottom:1px solid var(--border);font-size:1.1rem;color:var(--text-body);display:flex;align-items:center;gap:12px}
 .rh-split-list li::before{content:'';width:8px;height:8px;background:var(--gold);flex-shrink:0}
 .rh-split-reverse{direction:rtl}
 .rh-split-reverse > *{direction:ltr}
@@ -144,7 +144,7 @@ a{text-decoration:none;color:inherit}
 .rh-team-card:hover .rh-team-photo{filter:grayscale(0);border-color:var(--gold)}
 .rh-team-card h3{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:4px;color:var(--white)}
 .rh-team-card .rh-team-title{font-size:0.85rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;font-family:'Outfit',sans-serif;font-weight:500;margin-bottom:16px}
-.rh-team-card p{font-size:0.95rem;color:var(--text-dim);line-height:1.6}
+.rh-team-card p{font-size:1.05rem;color:var(--text-dim);line-height:1.6}
 .rh-team-social{display:flex;justify-content:center;gap:12px;margin-top:20px}
 .rh-team-social a{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text-dim);font-size:0.85rem;transition:all 0.3s}
 .rh-team-social a:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-glow)}
@@ -152,7 +152,7 @@ a{text-decoration:none;color:inherit}
 /* ========= ABOUT ========= */
 .rh-about-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .rh-about-text h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:20px}
-.rh-about-text p{margin-bottom:20px;font-size:1.05rem;line-height:1.75}
+.rh-about-text p{margin-bottom:20px;font-size:1.15rem;line-height:1.75}
 .rh-about-img{position:relative}
 .rh-about-img img{width:100%;object-fit:cover}
 .rh-about-img::after{content:'';position:absolute;inset:12px -12px -12px 12px;border:2px solid var(--gold-border);z-index:-1}
