@@ -1255,24 +1255,6 @@ function restoreEN() {
   document.documentElement.lang = 'en';
 }
 
-// Override form handler for language support
-handleSubmit = function(e) {
-  e.preventDefault();
-  var btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = currentLang === 'vi' ? 'Đang gửi...' : 'Sending...';
-  btn.disabled = true;
-  setTimeout(function() {
-    btn.textContent = currentLang === 'vi' ? 'Đã gửi!' : 'Message Sent!';
-    btn.style.background = '#2d8a4e';
-    setTimeout(function() {
-      btn.textContent = currentLang === 'vi' ? 'Gửi Tin Nhắn' : 'Send Message';
-      btn.style.background = '';
-      btn.disabled = false;
-      e.target.reset();
-    }, 3000);
-  }, 1000);
-};
-
 // Auto-apply saved language preference
 try { if (localStorage.getItem('rh-lang') === 'vi') setLang('vi'); } catch(e) {}
 </script>
