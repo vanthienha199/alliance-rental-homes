@@ -120,7 +120,7 @@ a{text-decoration:none;color:inherit}
 .rh-property-addr{font-size:1.05rem;color:var(--text-body);margin-bottom:16px;line-height:1.5}
 .rh-property-meta{display:flex;gap:20px;padding-top:16px;border-top:1px solid var(--border);color:var(--text-dim);font-size:0.95rem}
 .rh-property-meta span{display:flex;align-items:center;gap:5px}
-.rh-properties-cta{text-align:center;margin-top:48px}
+.rh-properties-cta{text-align:center;margin-top:48px}a.rh-property{display:block;color:inherit;text-decoration:none}.rh-properties-empty{grid-column:1/-1;text-align:center;color:var(--text-body);font-size:1.1rem}.rh-properties-empty a{color:var(--gold)}
 
 /* ========= OWNERS / RENTERS SPLIT ========= */
 .rh-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
@@ -455,6 +455,7 @@ a{text-decoration:none;color:inherit}
 </div>
 <div class="rh-properties-cta rh-reveal">
 <a href="#contact" class="rh-btn rh-btn-gold">Schedule a Tour</a>
+<a href="https://alliancerentalhomes.managebuilding.com/Resident/public/rentals" target="_blank" rel="noopener" class="rh-btn rh-btn-outline" style="border-color:var(--gold-border);color:var(--gold);margin-left:12px">See All Listings</a>
 </div>
 </div>
 </section>
@@ -539,13 +540,14 @@ a{text-decoration:none;color:inherit}
 <ul class="rh-split-list rh-reveal">
 <li>Browse available properties online</li>
 <li>Schedule a tour at your convenience</li>
-<li>Apply online and pay the $55 application fee for each adult</li>
+<li>Apply online through our secure resident portal</li>
 <li>Credit, background, and rental history checks</li>
 <li>Sign your lease and move in</li>
 </ul>
 <div style="display:flex;gap:12px;flex-wrap:wrap" class="rh-reveal">
 <a href="#properties" class="rh-btn rh-btn-gold">View Rentals</a>
-<a href="https://www.alliancerentalhomes.com/general-6" target="_blank" rel="noopener" class="rh-btn rh-btn-outline" style="border-color:var(--gold-border);color:var(--gold)">Apply Now</a>
+<a href="https://alliancerentalhomes.managebuilding.com/Resident/portal/login" target="_blank" rel="noopener" class="rh-btn rh-btn-outline" style="border-color:var(--gold-border);color:var(--gold)">Pay Rent</a>
+<a href="https://alliancerentalhomes.managebuilding.com/Resident/rental-application/new" target="_blank" rel="noopener" class="rh-btn rh-btn-outline" style="border-color:var(--gold-border);color:var(--gold)">Apply Now</a>
 </div>
 </div>
 <div class="rh-split-img">
@@ -820,6 +822,7 @@ a{text-decoration:none;color:inherit}
 <li><a href="#about">About Us</a></li>
 <li><a href="#resources">Resources</a></li>
 <li><a href="#contact">Contact</a></li>
+<li><a href="https://alliancerentalhomes.managebuilding.com/Resident/portal/login" target="_blank" rel="noopener">Resident Login</a></li>
 <li><a href="#" onclick="return false">Privacy Policy</a></li>
 <li><a href="#" onclick="return false">Terms of Service</a></li>
 </ul>
@@ -902,73 +905,53 @@ var counterObserver = new IntersectionObserver(function(entries) {
 }, { threshold: 0.5 });
 counters.forEach(function(el) { counterObserver.observe(el); });
 
-// ===== DEMO RENTAL PROPERTIES =====
-var demoProperties = [
-  {
-    img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80',
-    status: 'Available',
-    price: 2200,
-    addr: '4521 Lake Underhill Rd, Orlando, FL 32807',
-    beds: 3, baths: 2, sqft: 1650
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80',
-    status: 'Available',
-    price: 1800,
-    addr: '1023 Alafaya Trail, Orlando, FL 32828',
-    beds: 2, baths: 2, sqft: 1200
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
-    status: 'Available',
-    price: 3200,
-    addr: '8742 Winter Garden Vineland Rd, Winter Garden, FL 34787',
-    beds: 4, baths: 3, sqft: 2400
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80',
-    status: 'Available',
-    price: 1600,
-    addr: '2310 S Sanford Ave, Sanford, FL 32771',
-    beds: 2, baths: 1, sqft: 950
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80',
-    status: 'Coming Soon',
-    price: 2800,
-    addr: '12085 Narcoossee Rd, Lake Nona, FL 32832',
-    beds: 3, baths: 2, sqft: 1900
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80',
-    status: 'Available',
-    price: 2500,
-    addr: '6701 Kissimmee Vineland Rd, Kissimmee, FL 34747',
-    beds: 3, baths: 2, sqft: 1750
-  }
-];
-
+// ===== RENTAL LISTINGS (live from Buildium via /wp-json/alliance/v1/listings) =====
 var grid = document.getElementById('rhProperties');
-demoProperties.forEach(function(p) {
-  var card = document.createElement('div');
-  card.className = 'rh-property rh-reveal';
-  card.innerHTML =
-    '<div class="rh-property-img-wrap">' +
-      '<img class="rh-property-img" src="' + p.img + '" alt="Rental property">' +
-      '<div class="rh-property-status">' + p.status + '</div>' +
-    '</div>' +
-    '<div class="rh-property-body">' +
-      '<div class="rh-property-price">$' + p.price.toLocaleString() + '<span>/month</span></div>' +
-      '<div class="rh-property-addr">' + p.addr + '</div>' +
-      '<div class="rh-property-meta">' +
-        '<span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 7v11a1 1 0 001 1h16a1 1 0 001-1v-6a1 1 0 00-1-1H4a1 1 0 01-1-1V7a1 1 0 011-1h4"/></svg> ' + p.beds + ' Beds</span>' +
-        '<span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 20h16M4 20V10M20 20V10M8 14v2M12 14v2M16 14v2M4 10h16"/></svg> ' + p.baths + ' Baths</span>' +
-        '<span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg> ' + p.sqft.toLocaleString() + ' sqft</span>' +
+var RH_ICON_BED = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 7v11a1 1 0 001 1h16a1 1 0 001-1v-6a1 1 0 00-1-1H4a1 1 0 01-1-1V7a1 1 0 011-1h4"/></svg> ';
+var RH_ICON_BATH = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 20h16M4 20V10M20 20V10M8 14v2M12 14v2M16 14v2M4 10h16"/></svg> ';
+var RH_ICON_AREA = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg> ';
+function rhEsc(t) { var d = document.createElement('div'); d.textContent = t == null ? '' : String(t); return d.innerHTML; }
+function rhRenderListings(list) {
+  grid.innerHTML = '';
+  if (!list.length) {
+    grid.innerHTML = '<p class="rh-properties-empty">All of our homes are leased right now. Call <a href="tel:4078682976">(407) 868-2976</a> to hear about upcoming availability.</p>';
+    return;
+  }
+  list.forEach(function (p) {
+    var card = document.createElement('a');
+    card.className = 'rh-property rh-reveal';
+    card.href = p.url;
+    card.target = '_blank';
+    card.rel = 'noopener';
+    var status = p.status ? p.status.charAt(0).toUpperCase() + p.status.slice(1) : 'Available';
+    card.innerHTML =
+      '<div class="rh-property-img-wrap">' +
+        '<img class="rh-property-img" src="' + rhEsc(p.img) + '" alt="' + rhEsc(p.street) + '" loading="lazy">' +
+        '<div class="rh-property-status">' + rhEsc(status) + '</div>' +
       '</div>' +
-    '</div>';
-  grid.appendChild(card);
-  observer.observe(card);
-});
+      '<div class="rh-property-body">' +
+        '<div class="rh-property-price">$' + Math.round(p.rent).toLocaleString() + '<span>/month</span></div>' +
+        '<div class="rh-property-addr">' + rhEsc(p.street) + ', ' + rhEsc(p.city) + '</div>' +
+        '<div class="rh-property-meta">' +
+          '<span>' + RH_ICON_BED + p.beds + ' Beds</span>' +
+          '<span>' + RH_ICON_BATH + p.baths + ' Baths</span>' +
+          (p.sqft ? '<span>' + RH_ICON_AREA + p.sqft.toLocaleString() + ' sqft</span>' : '') +
+        '</div>' +
+      '</div>';
+    grid.appendChild(card);
+    observer.observe(card);
+  });
+  if (typeof currentLang !== 'undefined' ? currentLang === 'vi' : false) {
+    grid.querySelectorAll('.rh-property-price span').forEach(function (el) { el.dataset.en = el.textContent; el.textContent = '/tháng'; });
+    grid.querySelectorAll('.rh-property-meta span').forEach(function (el) { el.dataset.en = el.textContent; el.textContent = el.textContent.replace(' Beds', ' PN').replace(' Baths', ' WC'); });
+  }
+}
+fetch('/wp-json/alliance/v1/listings')
+  .then(function (r) { return r.json(); })
+  .then(function (j) { rhRenderListings(j.listings || []); })
+  .catch(function () {
+    grid.innerHTML = '<p class="rh-properties-empty">See every available home on our <a href="https://alliancerentalhomes.managebuilding.com/Resident/public/rentals" target="_blank" rel="noopener">rental listings page</a>.</p>';
+  });
 
 // ===== CONTACT FORM =====
 function handleSubmit(e) {
@@ -1070,7 +1053,10 @@ var VI = {
   'Find Your Perfect Home':'Tìm Ngôi Nhà Hoàn Hảo',
   'Browse available properties online':'Xem bất động sản trực tuyến',
   'Schedule a tour at your convenience':'Đặt lịch xem nhà theo thời gian phù hợp',
-  'Apply online and pay the $55 application fee for each adult':'Nộp đơn trực tuyến và đóng phí $55 cho mỗi người lớn',
+  'Apply online through our secure resident portal':'Nộp đơn trực tuyến qua cổng cư dân bảo mật',
+  'Pay Rent':'Đóng Tiền Nhà',
+  'Resident Login':'Cư Dân Đăng Nhập',
+  'See All Listings':'Xem Tất Cả Nhà Cho Thuê',
   'Credit, background, and rental history checks':'Kiểm tra tín dụng, lý lịch và lịch sử thuê nhà',
   'Sign your lease and move in':'Ký hợp đồng và dọn vào',
   'View Rentals':'Xem Nhà Thuê',
